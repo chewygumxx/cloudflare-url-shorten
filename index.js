@@ -3,13 +3,13 @@ const config = {
   theme:"theme/captcha",//Homepage theme, use the empty value for default theme. To use urlcool theme, please fill with "theme/urlcool" . If you need captcha feature, you need to use captcha theme.
   cors: "on",//Allow Cross-origin resource sharing for API requests.
   unique_link:true,//If it is true, the same long url will be shorten into the same short url
-  custom_link:false,//Allow users to customize the short url.
+  custom_link:true,//Allow users to customize the short url.
   safe_browsing_api_key: "", //Enter Google Safe Browsing API Key to enable url safety check before redirect.
   expiration_ttl: 0, // Short link expiration time in seconds. 86400 = 24 hours. Set to 0 for no expiration.
   
   // CAPTCHA Configuration
   captcha: {
-    enabled: true, // Master switch for CAPTCHA service
+    enabled: false, // Master switch for CAPTCHA service
     api_endpoint: "https://captcha.gurl.eu.org/api", // CAP Worker API endpoint
     require_on_create: true, // Require CAPTCHA when creating short links
     require_on_access: true, // Require CAPTCHA when accessing short links
@@ -17,7 +17,7 @@ const config = {
     fallback_on_error: true, // Allow operations when CAPTCHA service is down
     max_retries: 2, // Maximum retry attempts for CAPTCHA API calls
   }
-  }
+}
   
   const html404 = `<!DOCTYPE html>
   <body>
@@ -485,6 +485,6 @@ const config = {
   
   
   
-  addEventListener("fetch", async event => {
-    event.respondWith(handleRequest(event.request))
-  })
+addEventListener("fetch", async event => {
+  event.respondWith(handleRequest(event.request))
+})
