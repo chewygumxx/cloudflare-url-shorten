@@ -7,14 +7,10 @@
 // 
 // 
 
-//
-// https://developers.cloudflare.com/workers/wrangler/configuration
-//
-
 {
     "$schema": "./node_modules/wrangler/config-schema.json",
     "name": "url-shorten",
-    "compatibility_date": "2026-08-22", // Set this to today's date
+    "compatibility_date": "2026-08-24", // Set this to today's date
     "workers_dev": false,
     "routes": [
         { "custom_domain": true, "pattern": "cgxx.dev" }
