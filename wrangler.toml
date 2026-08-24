@@ -1,7 +1,0 @@
-name = "url-shorten"
-main = "index.js"
-compatibility_date = "2026-07-20"
-
-kv_namespaces = [
-  { binding = "LINKS", id = "8efa3ac3245c448892cfec02eddaaef4" }
-]

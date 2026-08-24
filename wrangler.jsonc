@@ -1,0 +1,26 @@
+// vim:set expandtab shiftwidth=4 filetype=jsonc:
+
+// 
+// 
+// ~chewygumxx/cloudflare-url-shorten.git
+// ::: :/wrangler.jsonc
+// 
+// 
+
+//
+// https://developers.cloudflare.com/workers/wrangler/configuration
+//
+
+{
+    "$schema": "./node_modules/wrangler/config-schema.json",
+    "name": "url-shorten",
+    "compatibility_date": "2026-08-22", // Set this to today's date
+    "workers_dev": false,
+    "routes": [
+        { "custom_domain": true, "pattern": "cgxx.dev" }
+    ],
+    "main": "index.js",
+    "kv_namespaces": [
+        { "binding": "LINKS", "id": "8efa3ac3245c448892cfec02eddaaef4" }
+    ]
+}
